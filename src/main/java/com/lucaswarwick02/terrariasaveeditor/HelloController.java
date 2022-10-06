@@ -58,20 +58,13 @@ public class HelloController
         for (int i = 0; i < decryptedString.length(); i = i + 2) {
             // Step-1 Split the hex string into two character group
             String s = decryptedString.substring(i, i + 2);
-            // Step-2 Convert the each character group into integer using valueOf method
+            // Step-2 Convert each character group into integer using valueOf method
             int n = Integer.valueOf(s, 16);
             // Step-3 Cast the integer value to char
             char c = (char) n;
-            if ( i < 20) {
-                System.out.println(c);
-                builder.append(c);
-            }
-            else {
-                System.out.println(c);
-                builder.append(c);
-            }
+            builder.append(c);
         }
 
-        System.out.println( builder );
+        welcomeText.setText( builder.toString() );
     }
 }
